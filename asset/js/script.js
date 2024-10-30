@@ -20,6 +20,30 @@ const modalEditBudgetBtn = document.querySelector(
 );
 
 const selectSortSpent = document.getElementById("sort_spent");
+const body = document.getElementsByTagName("body")[0];
+
+// set Theme
+checkSystemTheme();
+
+function checkSystemTheme() {
+  const darkTheme = window.matchMedia("(prefers=color-scheme : dark)");
+  if (!darkTheme.matches) {
+    body.classList.add("dark");
+    document.getElementById("icon_dark_theme").classList.add("hidden");
+    document.getElementById("icon_light_theme").classList.remove("hidden");
+  }
+}
+
+document.getElementById("theme_switch").addEventListener("click", (e) => {
+  if (body.classList.contains("dark")) {
+    document.getElementById("icon_dark_theme").classList.remove("hidden");
+    document.getElementById("icon_light_theme").classList.add("hidden");
+  } else {
+    document.getElementById("icon_dark_theme").classList.add("hidden");
+    document.getElementById("icon_light_theme").classList.remove("hidden");
+  }
+  body.classList.toggle("dark");
+});
 
 // Render Budgets Page
 function renderBudgets() {
