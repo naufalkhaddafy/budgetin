@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Budget - App</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <!-- CSS -->
+    <script type="module" crossorigin src="/assets/index-BtvRfvcC.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-BDvVgkE_.css">
+  </head>
+  <body class="">
+    <div id="notifications" class="notification-wrapper"></div>
+    <header class="container">
+      <button id="theme_switch" class="theme_switch">
+        <i id="icon_dark_theme" class="ph-fill ph-moon"></i>
+        <i id="icon_light_theme" class="ph-fill ph-sun hidden"></i>
+      </button>
+      <img src="/assets/bag-BQQ-irZ6.png" alt="" />
+      <h1>Budgetin.</h1>
+    </header>
+    <main id="budgets" class="container budgets">
+      <button class="add__budget__btn">+</button>
+    </main>
+    <main id="budget_details" class="container hidden">
+      <button id="back__home" class="back__home">
+        <i class="ph ph-caret-left icon__back"></i>
+        Halaman Utama
+      </button>
+      <div class="budget__card">
+        <div>
+          <h2 class="budget__name"></h2>
+          <p class="budget__amount"></p>
+          <p class="budget__total"></p>
+        </div>
+        <div class="icon">
+          <i class="ph ph-pencil-line"></i>
+        </div>
+      </div>
+      <button class="add__spent__btn"><span>+</span> Tambah Pengeluaran</button>
+      <div class="sort__spent">
+        <i class="ph ph-arrows-down-up"></i>
+        <select id="sort_spent">
+          <option selected value="spent_date|desc">Tanggal Terbaru</option>
+          <option value="name_spent|asc">Nama</option>
+          <option value="spent_amount|asc">Terkecil</option>
+          <option value="spent_amount|desc">Terbesar</option>
+        </select>
+      </div>
+      <div class="spent"></div>
+    </main>
+    <div id="budget_form" class="modal hidden">
+      <div class="modal__card">
+        <form action="" enctype="multipart/form-data">
+          <div class="modal__card__header">
+            <h4>Tambah Budget</h4>
+            <i class="ph ph-x-circle"></i>
+          </div>
+          <div class="modal__body">
+            <label for="name_budget">Nama Budget</label>
+            <input type="text" id="name_budget" name="name_budget" required />
+            <label for="total">Jumlah Budget</label>
+            <div class="input__money">
+              <span>Rp</span>
+              <input type="number" id="total" name="total" required />
+            </div>
+          </div>
+          <div class="modal__footer">
+            <button type="button" class="danger">
+              <i class="ph-fill ph-trash"></i>
+            </button>
+            <button type="submit">Simpan</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div id="budget_spent_form" class="modal hidden">
+      <div class="modal__card">
+        <form action="">
+          <div class="modal__card__header">
+            <h4>Tambah Pengeluaran</h4>
+            <i class="ph ph-x-circle"></i>
+          </div>
+          <div class="modal__body">
+            <input type="hidden" id="id_spent" />
+            <label for="name_spent">Nama Pengeluaran</label>
+            <input type="text" id="name_spent" name="name_spent" required />
+            <label for="spent_amount">Jumlah Pengeluaran</label>
+            <div class="input__money">
+              <span>Rp</span>
+              <input
+                type="number"
+                id="spent_amount"
+                name="spent_amount"
+                required
+              />
+            </div>
+            <label for="spent_date">Tanggal</label>
+            <input type="date" id="spent_date" name="spent_date" required />
+          </div>
+          <div class="modal__footer">
+            <button type="button" class="danger">
+              <i class="ph-fill ph-trash"></i>
+            </button>
+            <button type="submit">Simpan</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,17 @@
+{
+  "name": "budgetin",
+  "version": "1.0.0",
+  "description": "this project for learn make website, responsive for all devices, built using HTML, CSS, and JavaScript.",
+  "main": "/asset/js/script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev":"vite dev",
+    "build":"vite build",
+    "preview":"vite preview"
+  },
+  "author": "Codepai",
+  "license": "ISC",
+  "dependencies": {
+    "vite": "^5.4.10"
+  }
+}
