@@ -20,7 +20,6 @@
     <div id="notifications" class="notification-wrapper"></div>
     <header class="container">
       <img src="asset/images/bag.png" alt="" />
-      <!-- <img src="asset/bg.png" alt="" /> -->
       <h1>Budgetin.</h1>
     </header>
     <main id="budgets" class="container budgets">
@@ -44,11 +43,11 @@
       <button class="add__spent__btn"><span>+</span> Tambah Pengeluaran</button>
       <div class="sort__spent">
         <i class="ph ph-arrows-down-up"></i>
-        <select>
-          <option value="">Tanggal Terbaru</option>
-          <option value="">Nama</option>
-          <option value="">Terkecil</option>
-          <option value="">Terbesar</option>
+        <select id="sort_spent">
+          <option selected value="spent_date|desc">Tanggal Terbaru</option>
+          <option value="name_spent|asc">Nama</option>
+          <option value="spent_amount|asc">Terkecil</option>
+          <option value="spent_amount|desc">Terbesar</option>
         </select>
       </div>
       <div class="spent"></div>
@@ -61,15 +60,18 @@
             <i class="ph ph-x-circle"></i>
           </div>
           <div class="modal__body">
-            <label for="">Nama Budget</label>
-            <input type="text" name="name_budget" required />
-            <label for="">Jumlah Budget</label>
+            <label for="name_budget">Nama Budget</label>
+            <input type="text" id="name_budget" name="name_budget" required />
+            <label for="total">Jumlah Budget</label>
             <div class="input__money">
               <span>Rp</span>
-              <input type="number" name="total" required />
+              <input type="number" id="total" name="total" required />
             </div>
           </div>
           <div class="modal__footer">
+            <button type="button" class="danger">
+              <i class="ph-fill ph-trash"></i>
+            </button>
             <button type="submit">Simpan</button>
           </div>
         </form>
@@ -83,17 +85,26 @@
             <i class="ph ph-x-circle"></i>
           </div>
           <div class="modal__body">
-            <label for="">Nama Pengeluaran</label>
-            <input type="text" name="name_spent" />
-            <label for="">Jumlah Pengeluaran</label>
+            <input type="hidden" id="id_spent" />
+            <label for="name_spent">Nama Pengeluaran</label>
+            <input type="text" id="name_spent" name="name_spent" required />
+            <label for="spent_amount">Jumlah Pengeluaran</label>
             <div class="input__money">
               <span>Rp</span>
-              <input type="number" name="spent_amount" />
+              <input
+                type="number"
+                id="spent_amount"
+                name="spent_amount"
+                required
+              />
             </div>
-            <label for="">Tanggal</label>
-            <input type="date" name="spent_date" />
+            <label for="spent_date">Tanggal</label>
+            <input type="date" id="spent_date" name="spent_date" required />
           </div>
           <div class="modal__footer">
+            <button type="button" class="danger">
+              <i class="ph-fill ph-trash"></i>
+            </button>
             <button type="submit">Simpan</button>
           </div>
         </form>
