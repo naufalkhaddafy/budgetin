@@ -5,9 +5,9 @@
   "main": "/asset/js/script.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev":"vite dev",
-    "build":"vite build",
-    "preview":"vite preview"
+    "dev": "vite dev",
+    "build": "vite build",
+    "preview": "vite preview"
   },
   "author": "Codepai",
   "license": "ISC",
